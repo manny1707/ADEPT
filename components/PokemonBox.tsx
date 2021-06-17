@@ -14,13 +14,20 @@ import {
   CircularProgress,
   CircularProgressLabel,
   Button,
+  Checkbox,
+  Editable, EditableInput, EditablePreview
 } from "@chakra-ui/react";
 
 export default function PokemonBox() {
   return (
     <Box w="80%" h="80%" margin="40px" padding="20px">
       <Flex marginBottom="5px">
-        <Heading size="xl">ninetales</Heading>
+        <Heading size="xl">
+          <Editable defaultValue="Add pokemon name here">
+            <EditablePreview />
+            <EditableInput />
+          </Editable>
+        </Heading>
         <Spacer />
         <CircularProgress value={66} color="pink">
           <CircularProgressLabel>66</CircularProgressLabel>
@@ -71,7 +78,7 @@ export default function PokemonBox() {
 
       <Flex marginTop="15px">
         <Image
-          borderRadius="20px"
+          //borderRadius="20px"
           border="1px"
           borderColor="pink"
           boxSize="125px"
@@ -106,6 +113,7 @@ export default function PokemonBox() {
           alt=""
           marginRight="20px"
         />
+        <Checkbox defaultChecked> hello there </Checkbox>
       </Flex>
     </Box>
   );

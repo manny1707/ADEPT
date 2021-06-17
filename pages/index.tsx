@@ -1,7 +1,7 @@
 import React from "react";
 import { Counter } from "../components/Counter";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp() {
   return (
     <div>
       <p>hello</p>
