@@ -17,8 +17,16 @@ import {
   Checkbox,
   Editable, EditableInput, EditablePreview
 } from "@chakra-ui/react";
+import { useState } from "react";
+
+import Showpicture from "./Showpicture";
 
 export default function PokemonBox() {
+
+  const [isChecked, setisChecked] = useState(false);
+  const onClick = () => isChecked ? setisChecked(false) : setisChecked(true) ;
+
+
   return (
     <Box w="80%" h="80%" margin="40px" padding="20px">
       <Flex marginBottom="5px">
@@ -113,7 +121,8 @@ export default function PokemonBox() {
           alt=""
           marginRight="20px"
         />
-        <Checkbox defaultChecked> hello there </Checkbox>
+        <Checkbox onChange={onClick}> Show puppy </Checkbox>
+        <Showpicture isShow = {isChecked} /> 
       </Flex>
     </Box>
   );
